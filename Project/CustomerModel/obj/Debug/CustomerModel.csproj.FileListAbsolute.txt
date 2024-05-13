@@ -1,0 +1,16 @@
+C:\Users\HarshitChilvirwar\Desktop\MVC\Project\CustomerModel\bin\Debug\CustomerModel.dll
+C:\Users\HarshitChilvirwar\Desktop\MVC\Project\CustomerModel\bin\Debug\CustomerModel.pdb
+C:\Users\HarshitChilvirwar\Desktop\MVC\Project\CustomerModel\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\HarshitChilvirwar\Desktop\MVC\Project\CustomerModel\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\HarshitChilvirwar\Desktop\MVC\Project\CustomerModel\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.SqlCe.dll
+C:\Users\HarshitChilvirwar\Desktop\MVC\Project\CustomerModel\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+C:\Users\HarshitChilvirwar\Desktop\MVC\Project\CustomerModel\obj\Debug\CustomerModel.dll
+C:\Users\HarshitChilvirwar\Desktop\MVC\Project\CustomerModel\obj\Debug\CustomerModel.pdb
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\CustomerModel\bin\Debug\CustomerModel.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\CustomerModel\bin\Debug\CustomerModel.pdb
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\CustomerModel\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\CustomerModel\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\CustomerModel\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.SqlCe.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\CustomerModel\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\CustomerModel\obj\Debug\CustomerModel.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\CustomerModel\obj\Debug\CustomerModel.pdb

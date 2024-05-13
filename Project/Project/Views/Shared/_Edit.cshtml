@@ -1,0 +1,40 @@
+﻿@{
+    Layout = "";
+}
+@model Model.ShopModel
+@using System.Data;
+@{
+    ViewBag.Title = "Edit";
+}
+
+@using (Html.BeginForm(null,null,FormMethod.Post, new { id = "form" }))
+{
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+        <h2>Edit</h2>      
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(m=>m.SaleOrdersDetailsId)
+        <div style="margin-right:10px">
+            <label>Select Customer Name</label>
+            @Html.DropDownListFor(m => m.CustomerId, new SelectList(Model.CustomerList, "CustomerId", "Name"), "--Select Customer--", new { @class = "form-control ", @id = "CustomerId" })
+        </div>
+        <div style="margin-right:10px">
+            <label>Select Oder Date</label><br />
+            @Html.TextBoxFor(m => m.DateSaleOrders, new { @class = "form-control", @type = "date" })
+        </div>
+        <div style="margin-right:10px">
+            <label>Select Product</label>
+            @Html.DropDownListFor(m => m.ProductId, new SelectList(Model.ProductModelList, "ProductId", "Name"), "--Select Product--", new { @class = "form-control ", @id = "ProductId" })
+        </div>
+        <div style="margin-right:10px">
+            <label>Enter Quantity</label>
+      @Html.TextBoxFor(m => m.Quantity, new { @class = "form-control",@id= "QuantityId", type = "number", step = "1", min = "1" , required = "required" })
+          
+        </div>
+        <div style="margin-top:2.4rem;margin-left: 1rem;">
+            <input type="submit" id="saveBtn" value="Save" class="btn btn-primary "data-dismiss="modal">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+}
+

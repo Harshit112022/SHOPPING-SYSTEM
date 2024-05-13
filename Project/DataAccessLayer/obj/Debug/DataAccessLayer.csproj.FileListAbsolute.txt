@@ -1,0 +1,22 @@
+C:\Users\HarshitChilvirwar\Desktop\MVC\Project\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\HarshitChilvirwar\Desktop\MVC\Project\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\HarshitChilvirwar\Desktop\MVC\Project\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\HarshitChilvirwar\Desktop\MVC\Project\DataAccessLayer\bin\Debug\CustomerModel.dll
+C:\Users\HarshitChilvirwar\Desktop\MVC\Project\DataAccessLayer\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\HarshitChilvirwar\Desktop\MVC\Project\DataAccessLayer\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\HarshitChilvirwar\Desktop\MVC\Project\DataAccessLayer\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.SqlCe.dll
+C:\Users\HarshitChilvirwar\Desktop\MVC\Project\DataAccessLayer\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+C:\Users\HarshitChilvirwar\Desktop\MVC\Project\DataAccessLayer\bin\Debug\CustomerModel.pdb
+C:\Users\HarshitChilvirwar\Desktop\MVC\Project\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\HarshitChilvirwar\Desktop\MVC\Project\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\DataAccessLayer\bin\Debug\CustomerModel.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\DataAccessLayer\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\DataAccessLayer\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\DataAccessLayer\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.SqlCe.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\DataAccessLayer\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\DataAccessLayer\bin\Debug\CustomerModel.pdb
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

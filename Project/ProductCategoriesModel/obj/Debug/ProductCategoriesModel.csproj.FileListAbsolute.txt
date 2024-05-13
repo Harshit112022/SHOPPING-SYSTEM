@@ -1,0 +1,4 @@
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\ProductCategoriesModel\bin\Debug\ProductCategoriesModel.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\ProductCategoriesModel\bin\Debug\ProductCategoriesModel.pdb
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\ProductCategoriesModel\obj\Debug\ProductCategoriesModel.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\ProductCategoriesModel\obj\Debug\ProductCategoriesModel.pdb

@@ -1,0 +1,23 @@
+﻿<script type="text/javascript">
+    function RenderList(list) {
+        var tableBody = $('#tblMasterShop tbody');
+        tableBody.empty();
+        $.each(list, function (index, item) {
+            var row = '<tr align="center" style="border: 1px solid #807d78;">' +
+                '<td scope="col" style="border: 1px solid #807d78;">' + item.CustomerName + '</td>' +
+                '<td scope="col" style="border: 1px solid #807d78;">' + item.DateSaleOrders+ '</td>' +
+                '<td scope="col" style="border: 1px solid #807d78;">' + item.ProductName + '</td>' +
+                '<td scope="col" style="border: 1px solid #807d78;">' + item.ProductCategory + '</td>' +
+                '<td scope="col" style="border: 1px solid #807d78;">' + item.Quantity + '</td>' +
+                '<td scope="col" style="border: 1px solid #807d78;">' + item.ProductPrice + '</td>' +
+                '<td scope="col" style="border: 1px solid #807d78;">' + item.TotalAmmount + '</td>' +
+                '<td scope="col" style="border: 1px solid #807d78;">' + '<a href="/ShopMaster/Edit?SaleOrdersDetailsId=' + item.SaleOrdersDetailsId + '" role="button" class="btn ">Edit</a>' +
+                '<button id="EditSaleOrdersDetails" value="' + item.SaleOrdersDetailsId + '" class="btn ">Edit</button>' +
+                '&nbsp;&nbsp;' +
+                '<button id = "deleteSaleOrder" value="' + item.SaleOrdersDetailsId
+                + '" class="btn" >Delete</button>' + '</td>'
+            tableBody.append(row);
+        }
+        )
+    }
+</script>

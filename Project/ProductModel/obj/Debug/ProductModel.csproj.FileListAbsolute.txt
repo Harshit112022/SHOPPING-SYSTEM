@@ -1,0 +1,7 @@
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\ProductModel\bin\Debug\ProductModel.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\ProductModel\bin\Debug\ProductModel.pdb
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\ProductModel\bin\Debug\ProductCategoriesModel.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\ProductModel\bin\Debug\ProductCategoriesModel.pdb
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\ProductModel\obj\Debug\ProductModel.csprojResolveAssemblyReference.cache
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\ProductModel\obj\Debug\ProductModel.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\ProductModel\obj\Debug\ProductModel.pdb

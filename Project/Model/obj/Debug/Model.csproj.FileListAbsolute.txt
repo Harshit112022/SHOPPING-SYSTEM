@@ -1,0 +1,16 @@
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\Model\bin\Debug\Model.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\Model\bin\Debug\Model.pdb
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\Model\bin\Debug\CustomerModel.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\Model\bin\Debug\DAL.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\Model\bin\Debug\ProductCategoriesModel.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\Model\bin\Debug\ProductModel.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\Model\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\Model\bin\Debug\CustomerModel.pdb
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\Model\bin\Debug\DAL.pdb
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\Model\bin\Debug\ProductCategoriesModel.pdb
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\Model\bin\Debug\ProductModel.pdb
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\Model\obj\Debug\Model.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\Model\obj\Debug\Model.pdb

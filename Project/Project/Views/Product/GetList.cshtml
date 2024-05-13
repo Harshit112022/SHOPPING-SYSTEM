@@ -1,0 +1,87 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "GetList";
+}
+<style>
+    .form-row.inline {
+        display: flex;
+        align-items: center;
+    }
+</style>
+<h2>Products</h2>
+
+
+@using (Html.BeginForm("GetList", "Product", FormMethod.Get))
+    {
+        <div class="form-row" style="display: flex; align-items: center;   margin-bottom: 24px;">
+            <div class="col-md-4">
+                <label class="form-control-static">Search Name</label>
+                @Html.TextBox("varName", null, new { placeholder = "Enter product name", @class = "form-control", Request = Request["varName"] })
+            </div>
+            <div class="col-md-4" style="align-items:baseline;  ">
+                <label class="form-control-static">Search by Product Category</label>
+                @Html.DropDownList("productCategory", Model.ProductCategories as SelectList, "Select Product Categories", new { @class = "form-control" })
+            </div>
+
+         <div  class="col-md-4" style=" align-items:baseline; width: 15%;">
+
+                <input type="submit" value="Search" class="btn btn-primary btn-block" />
+         </div>
+            <div  class="col-md-4" style="align-items: center; width: 15%;">
+
+         
+                <a href="@Url.Action("ProductsInsert", "Product")" class="btn btn-warning btn-block">Create Product</a>
+            </div>
+       
+     
+            </div>
+    }
+
+<div>
+
+    <table class="table table-hover table-bordered">
+        <tr align="center" bgcolor="#ccccff">
+            <td align="center">
+                <b>
+                    Product Name
+
+                </b>
+            </td>
+            <td>
+                <b>
+                    ProductCategory
+                </b>
+            </td>
+            <td>
+                <b>
+                    ProductPrice
+                </b>
+            </td>
+            <td>
+                <b>Action</b>
+            </td>
+        </tr>
+
+        @foreach (var item in Model.Product)
+            {
+
+            <tr align="center">
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.ProductCategory
+                </td>
+                <td>
+                    @item.ProductPrice
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }, new { @class = " btn btn-primary" })&emsp;
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ProductId }, new { @class = " btn btn-danger" })&emsp;
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+

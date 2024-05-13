@@ -1,0 +1,11 @@
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\DataAccessLayeProductCategories\bin\Debug\DataAccessLayeProductCategories.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\DataAccessLayeProductCategories\bin\Debug\DataAccessLayeProductCategories.pdb
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\DataAccessLayeProductCategories\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\DataAccessLayeProductCategories\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\DataAccessLayeProductCategories\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.SqlCe.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\DataAccessLayeProductCategories\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\DataAccessLayeProductCategories\bin\Debug\ProductCategoriesModel.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\DataAccessLayeProductCategories\bin\Debug\ProductCategoriesModel.pdb
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\DataAccessLayeProductCategories\obj\Debug\DataAccessLayeProductCategories.csprojResolveAssemblyReference.cache
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\DataAccessLayeProductCategories\obj\Debug\DataAccessLayeProductCategories.dll
+C:\Users\HarshitChilvirwar\Desktop\SHOPPING SYSTEM\Project\DataAccessLayeProductCategories\obj\Debug\DataAccessLayeProductCategories.pdb

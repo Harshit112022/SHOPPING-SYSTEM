@@ -1,0 +1,408 @@
+﻿@*@model IEnumerable<Model.ShopModel>*@
+@using System.Data;
+@model Model.ShopModel
+@{
+    ViewBag.Title = "ShopMaster";
+}
+<style>
+    .cente#807d78 {
+        text-align: center; /* Center-aligns the content */
+    }
+    hr {
+        border: none; /* Remove default border */
+        height: 1px; /* Set height of the line */
+        background-color: #333; /* Set background color to create a dark line */
+    }
+    .pagination-container {
+        text-align: center;
+    }
+    .jjj {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-left: 43rem;
+    }
+    .paging.active {
+        background-color: yellow;
+        border: 3px red solid;
+    }
+</style>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="~/Scripts/JavaScriptOwn.js"></script>
+</head>
+<div class="center">
+    <h1>Shop Master</h1>
+</div>
+    
+@*<script type="text/javascript">
+    $(document).ready(function () {
+        var PageNumber = 1;
+        var PageSize = 10;
+        var CurrentPage = 0;
+        var GlobalTotalCount = 0;
+        var counter;
+        function GetList(CustomerName, ProductId, ProductCategoriesId, FromDate, ToDate, PageNumber, PageSize) {
+            var obj = {
+                customerName: CustomerName,
+                productId: ProductId,
+                productCategoriesId: ProductCategoriesId,
+                fromDate: FromDate,
+                toDate: ToDate,
+                PageNumber: PageNumber,
+                PageSize: PageSize
+            }
+            $.ajax({
+                url: '@Url.Action("GetList", "ShopMaster")',
+                method: "POST",
+                data: obj,
+                dataType: "json",
+                success: function (data) {
+                    // console.log(data)
+                    //data = JSON.parse(data);
+                    console.log("HEllo............")
+                    RenderList(data.MasterList)
+                    renderPagination(data.TotalCount, data.PageNumber);
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        }
+        function Insert() {
+            $.ajax({
+                url: '@Url.Action("Insert", "ShopMaster")',
+                method: "GET",
+                success: function (response) {
+                    $('.modal-body').html(response);
+                },
+                error: function (xhr, status, error) {
+                    console.error(xhr.responseText);
+                }
+            });
+        }
+        function Delete(id) {
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        icon: "success"
+                    });
+                    var obj = { id: id };
+                    $.ajax({
+                        url: '@Url.Action("Delete","ShopMaster")',
+                        type: 'POST',
+                        data: obj,
+                        success: function () {
+                            console.log('Success..')
+                            GetList(null, null, null, null, null, PageNumber, PageSize);
+                        },
+                        error: function () {
+                            console.log(error);
+                        }
+                    })
+                }
+            })
+        }
+        function Edit(id) {
+            var obj = {
+                SaleOrdersDetailsId: id,
+                PageNumber: PageNumber 
+            }
+            $.ajax({
+                url: '@Url.Action("Edit", "ShopMaster")',
+                method: 'GET',             
+                data: obj,                
+                success: function (response) {                
+                    $('.modal').modal();
+                    $('.modal-body').html(response);
+                    console.log('Edit Working... 2');
+                },
+                eror: function () {
+                    console.log(error);
+                }
+            })
+        }      
+        //function RenderList(list) {
+        //    var tableBody = $('#tblMasterShop tbody');
+        //    tableBody.empty();
+        //    $.each(list, function (index, item) {
+        //        var row = '<tr align="center" style="border: 1px solid #807d78;">' +
+        //            '<td scope="col" style="border: 1px solid #807d78;">' + item.CustomerName + '</td>' +
+        //            '<td scope="col" style="border: 1px solid #807d78;">' + item.DateSaleOrders + '</td>' +
+        //            '<td scope="col" style="border: 1px solid #807d78;">' + item.ProductName + '</td>' +
+        //            '<td scope="col" style="border: 1px solid #807d78;">' + item.ProductCategory + '</td>' +
+        //            '<td scope="col" style="border: 1px solid #807d78;">' + item.Quantity + '</td>' +
+        //            '<td scope="col" style="border: 1px solid #807d78;">' + item.ProductPrice + '</td>' +
+        //            '<td scope="col" style="border: 1px solid #807d78;">' + item.TotalAmmount + '</td>' +
+        //            '<td scope="col" style="border: 1px solid #807d78;">' + '<button id="EditSaleOrdersDetails" value="' + item.SaleOrdersDetailsId
+        //            + '" class="btn ">Edit</button>' + '&nbsp;&nbsp;' + '<button id = "deleteSaleOrder" value="' + item.SaleOrdersDetailsId
+        //            + '" class="btn" >Delete</button>' + '</td>'
+        //        tableBody.append(row);
+        //    }
+        //    )
+        //}
+        function renderPagination(TotalCount, PageNumber) {
+            $(".pagination").empty()
+            GlobalTotalCount = TotalCount;
+            if (PageNumber > 1) {
+                $(".pagination").append(`<li class="page-item "  value=${PageNumber - 1} id="pagenumber"><a class="page-link" href="#" tabindex="-1">Previous</a></li>`)
+                CurrentPage = $('#pagenumber').val();
+            }
+            for (var i = 1; i <= TotalCount; i++) {
+                if (PageNumber == i) {
+                    $(".pagination").append(` <li class="page-item active" value=${i} id="pagenumber" ><a class="page-link" href="#">${i}</a></li>`)
+                    CurrentPage = $('#pagenumber').val();
+                } else {
+                    $(".pagination").append(` <li class="page-item "   value=${i} id="pagenumber"><a class="page-link" href="#">${i}</a></li>`)
+                    CurrentPage = $('#pagenumber').val();
+                }
+            }
+            if (TotalCount != PageNumber) {
+                $(".pagination").append(`<li class="page-item"   value=${PageNumber + 1} id="pagenumber"><a class="page-link" href="#">Next</a></li>`)
+                CurrentPage = $('#pagenumber').val();
+            }
+        }
+        function search() {
+            event.preventDefault(); // Prevent default form submission
+            CustomerName = $('#CustomerName').val().trim();
+            ProductId = $('#ProductId').val();
+            ProductCategoriesId = $('#ProductCategoriesId').val();
+            FromDate = $('#FromDate').val();
+            ToDate = $('#ToDate').val();
+            PageSize = $('#PageSize').val();
+            console.log("Search Funtion PageSize " + PageSize)
+            console.log("Search Funtion PageNumber" + PageNumber)
+            GetList(CustomerName, ProductId, ProductCategoriesId, FromDate, ToDate, 1, PageSize);
+        }
+        $('#reset').click(function () {
+            CustomerName = $('#CustomerName').val(null)
+            ProductId = $('#ProductId').val(null);
+            ProductCategoriesId = $('#ProductCategoriesId').val(null);
+            FromDate = $('#FromDate').val(null);
+            ToDate = $('#ToDate').val(null);
+            GetList(null, null, null, null, null);
+        })
+        $('#PageSize').change(function () {
+            PageSize = $(this).val();
+            PageNumber = 1;
+            CustomerName = $('#CustomerName').val().trim();
+            ProductId = $('#ProductId').val();
+            ProductCategoriesId = $('#ProductCategoriesId').val();
+            FromDate = $('#FromDate').val();
+            ToDate = $('#ToDate').val();
+            PageSize = $('#PageSize').val();
+            console.log("Search Funtion PageSize " + PageSize)
+            console.log("Search Funtion PageNumber" + PageNumber)
+            GetList(CustomerName, ProductId, ProductCategoriesId, FromDate, ToDate, 1, $(this).val());
+        })
+        $('#insert').click(Insert);
+        $('#searchForm').submit(search);
+        $(document).on('click', '#EditSaleOrdersDetails', function () {
+            var id = $(this).val();          
+            Edit(id);
+        })
+        $(document).on('click', '#deleteSaleOrder', function () {
+            var id = $(this).val();
+            Delete(id);
+        })
+        $(document).on('click', '#pagenumber', function () {
+            console.log("Function get clicked..")
+            PageNumber = $(this).val();
+            CustomerName = $('#CustomerName').val().trim();
+            ProductId = $('#ProductId').val();
+            ProductCategoriesId = $('#ProductCategoriesId').val();
+            FromDate = $('#FromDate').val();
+            ToDate = $('#ToDate').val();
+            PageSize = $('#PageSize').val();
+            console.log("Search Funtion PageSize " + PageSize)
+            console.log("Search Funtion PageNumber" + PageNumber)
+            GetList(CustomerName, ProductId, ProductCategoriesId, FromDate, ToDate, PageNumber, PageSize);
+        })
+        GetList();
+    })
+</script>*@
+<button type="button" id="insert" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Insert
+</button>
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "searchForm" }))
+{
+    <div style="display:flex; margin-bottom:2REM;">
+        <div style="margin-right:10px">
+            <label>Search Customer</label>
+            @Html.TextBoxFor(m => m.CustomerName, null, new { @class = "form-control ", placeholder = "Enter customer name", @id = "CustomerName", @Request = Request["CustomerName"] })
+        </div>
+        <div style="margin-right:10px">
+            <label>Search Product</label>
+            @Html.DropDownListFor(m => m.ProductId, new SelectList(Model.ProductModelList, "ProductId", "Name"), "--Select Products--", new { @class = "form-control ", @id = "ProductId" })
+        </div>
+        <div style="margin-right:10px">
+            <label>Search By product cyto.</label>
+            @Html.DropDownListFor(m => m.ProductCategoriesId, new SelectList(Model.ProductCategoryModel, "ProductCategoriesId", "Name"), "--Select ProductCategory--", new { @class = "form-control ", @id = "ProductCategoriesId" })
+        </div>
+        <div style="margin-right:10px">
+            <label>From Date</label><br />
+            @Html.TextBoxFor(model => model.FromDate, new { @class = "form-control", @type = "date", @id = "FromDate" })
+        </div>
+        <div style="margin-right:10px">
+            <label> To Date</label><br />
+            @Html.TextBoxFor(model => model.ToDate, new { @class = "form-control", @type = "date", @id = "ToDate" })
+        </div>
+        <div style="margin-top:2.4rem;margin-left: 1rem;">
+            <input type="submit" value="Search" class="btn btn-primary">
+        </div>
+        <div style="margin-top:2.4rem;margin-left: 1rem;">
+            <input type="reset" value="rest" class="btn btn-danger" id="reset">
+        </div>
+    </div>
+}
+<table style="border-color: #807d78;  border-width: 1px; align-content: center;" class="table table-hover table-borde#807d78" id="tblMasterShop">
+    <thead>
+        <tr align="center" bgcolor="#ccccff" style="color: #000000;">
+            <td scope="col" style="border: 1px solid #807d78;">
+                <b>
+                    Customer Name
+                </b>
+            </td>
+            <td scope="col" style="border: 1px solid #807d78;">
+                <b>
+                    Date of Orders
+                </b>
+            </td>
+            <td scope="col" style="border: 1px solid #807d78;">
+                <b>
+                    Product Name
+                </b>
+            </td>
+            <td scope="col" style="border: 1px solid #807d78;">
+                <b>
+                    Product Category
+                </b>
+            </td>
+            <td scope="col" style="border: 1px solid #807d78;">
+                <b>
+                    Quantity
+                </b>
+            </td>
+            <td scope="col" style="border: 1px solid #807d78;">
+                <b>
+                    Product Price
+                </b>
+            </td>
+            <td scope="col" style="border: 1px solid #807d78;">
+                <b>
+                    Total Ammount
+                </b>
+            </td>
+            <td scope="col" style="border: 1px solid #807d78;">
+                <b>
+                    Action
+                </b>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+    @Html.Partial("_GetList",Model.MasterList)
+    </tbody>
+    @*@foreach (DataRow row in Model.MasterList.Tables[0].Rows)
+        {
+            <tr align="center" style="border: 1px solid #807d78;">
+                <td scope="col" style="border: 1px solid #807d78;">@row["CustomerName"]</td>
+                <td scope="col" style="border: 1px solid #807d78;">@row["DateSaleOrders"]</td>
+                <td scope="col" style="border: 1px solid #807d78;">@row["ProductName"]</td>
+                <td scope="col" style="border: 1px solid #807d78;">@row["ProductCategory"]</td>
+                <td scope="col" style="border: 1px solid #807d78;">@row["Quantity"]</td>
+                <td scope="col" style="border: 1px solid #807d78;">@row["ProductPrice"]</td>
+                <td scope="col" style="border: 1px solid #807d78;">@row["TotalAmmount"]</td>
+            </tr>
+        }*@
+</table>
+@*<div class="pagination-container" style="display:inline-block">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination" id="PageNumber">
+                @if (Model.PageNumber > 1)
+                {
+                    <li>
+                        <a class="page-link" href="@Url.Action("Index", "ShopMaster", new { PageNumber = Model.PageNumber - 1, pageSize = Model.PageSize})">Previous</a>
+                    </li>
+                }
+                @if (Model.PageNumber > 2)
+                {
+                    <li>
+                        <a class="page-link" href="@Url.Action("Index", "ShopMaster", new { PageNumber = Model.PageNumber - 2, pageSize = Model.PageSize })">@((Model.PageNumber - 2)) </a>
+                    </li>
+                }
+                @if (Model.PageNumber > 1)
+                {
+                    <li>
+                        <a  class="page-link" href="@Url.Action("Index", "ShopMaster", new { PageNumber = Model.PageNumber - 1, pageSize = Model.PageSize })"> @((Model.PageNumber - 1))</a>
+                    </li>
+                }
+                <li  class="active"><a class="page-link" href="@Url.Action("Index", "ShopMaster", new { PageNumber = Model.PageNumber, pageSize = Model.PageSize })">@Model.PageNumber</a></li>
+                @if (Model.PageNumber < Model.TotalCount)
+                {
+                    <li>
+                        <a  class="page-link" href="@Url.Action("Index", "ShopMaster", new { PageNumber = Model.PageNumber + 1, pageSize = Model.PageSize })">@((Model.PageNumber + 1))</a>
+                    </li>
+                }
+                @if (Model.PageNumber < Model.TotalCount - 1)
+                {
+                    <li>
+                        <a  class="page-link" href="@Url.Action("Index", "ShopMaster", new { PageNumber = Model.PageNumber + 2, pageSize = Model.PageSize })">@((Model.PageNumber + 2))</a>
+                    </li>
+                }
+                @if (Model.PageNumber < Model.TotalCount)
+                {
+                    <li>
+                        <a  class="page-link" href="@Url.Action("Index", "ShopMaster", new { PageNumber = Model.PageNumber + 1, pageSize = Model.PageSize })">Next</a>
+                    </li>
+                }
+                <li> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;</li>
+                <li> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;</li>
+            </ul>
+        </nav>
+    </div>*@
+@*<div class="pagination-container" style="display:flex"  id="PageList" >
+        <button type="button" class="btn btn-primary" id="prevPage" style="margin-right:3rem">Previous</button>
+        <div id="buttonContainer"></div>
+        <button type="button" class="btn btn-primary" id="nextPage" >Next</button>&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;
+        @Html.DropDownListFor(m => m.PageSize, new SelectList(new[] { 3, 5, 10 }), "Size", new {id = "PageSize", style = "margin-right: 100px;" })
+    </div>*@
+@*<div class="pagination-container" id="pagination" style="display:inline"></div>*@
+<nav aria-label="...">
+    <ul class="pagination"></ul>
+</nav>
+@Html.DropDownListFor(m => m.PageSize, new SelectList(new[] { 3, 5, 10, 20 }), "Size", new { id = "PageSize", style = "margin-right: 100px;" })
+<p>
+    @* <a href="@Url.Action("Insert", "ShopMaster")" class="btn  btn-warning">Insert</a>*@
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  style="margin-left:-238px">
+        <div class="modal-dialog"   style="margin-left: -139px;">
+            <div class="modal-content">
+                <div class="modal-header" style="display: flex; align-items: center;">
+                    @*  <h2 style="margin-right: auto;">Insert</h2>*@
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true" style="background-color: transparent; border: none; cursor: pointer; transition: all 0.3s ease;">
+                        <span aria-hidden="true" style="font-size: 27px;margin-left: 523px;">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @*/create form*@
+                </div>
+            </div>
+        </div>
+    </div>
+    @*<input type="button" id="insert" value="Insert" class="btn  btn-warning" />*@
+</p>
